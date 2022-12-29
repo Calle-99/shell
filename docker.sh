@@ -69,6 +69,13 @@ exec() {
     docker_sh
 }
 
+update() {
+    read -ep "请输入容器名称或者ID: " id
+    docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/watchtower -c     --run-once     ${id}
+    echo && echo -n -e "${yellow}* 按回车返回主菜单 *${plain}" && read temp
+    docker_sh
+}
+
 
 docker_sh() {    
     echo -e "
@@ -81,14 +88,15 @@ docker_sh() {
     ${green}5.${plain}  删除容器
     ${green}6.${plain}  停止并删除容器
     ${green}7.${plain}  进入容器内部
+    ${green}8.${plain}  热更新容器镜像
     ——镜像命令——————————————-
-    ${green}8.${plain}  
-    ${green}9.${plain}  
-    ${green}10.${plain} 
-    ${green}11.${plain} 
-    ${green}12.${plain} 
+    ${green}20.${plain}  
+    ${green}21.${plain}  
+    ${green}22.${plain} 
+    ${green}23.${plain} 
+    ${green}24.${plain} 
     ————————————————-
-    ${green}13.${plain} 查看容器占用数据
+    ${green}99.${plain} 查看容器占用数据
     ————————————————-
     ${green}0.${plain}  退出脚本
     "
@@ -104,7 +112,8 @@ docker_sh() {
     5) rm ;;
     6) stop+rm ;;
     7) exec ;;
-    13)
+    8) update ;;
+    99)
         stats
         ;;
     0) exit 0 ;;
