@@ -76,6 +76,12 @@ update() {
     docker_sh
 }
 
+#镜像命令
+images() {
+    docker images
+    echo && echo -n -e "${yellow}* 按回车返回主菜单 *${plain}" && read temp
+    docker_sh
+}
 
 docker_sh() {    
     echo -e "
@@ -90,7 +96,7 @@ docker_sh() {
     ${green}7.${plain}  进入容器内部
     ${green}8.${plain}  热更新容器镜像
     ——镜像命令——————————————-
-    ${green}20.${plain}  
+    ${green}20.${plain} 查看所有镜像
     ${green}21.${plain}  
     ${green}22.${plain} 
     ${green}23.${plain} 
@@ -113,6 +119,7 @@ docker_sh() {
     6) stop+rm ;;
     7) exec ;;
     8) update ;;
+    20) images ;;
     99)
         stats
         ;;
