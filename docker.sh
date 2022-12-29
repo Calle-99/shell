@@ -83,6 +83,15 @@ images() {
     docker_sh
 }
 
+rm_images() {
+    read -ep "请输入镜像ID前四位字符或者<仓库名>:<标签>: " id
+    docker rmi -f ${id}
+    echo && echo -n -e "${yellow}* 按回车返回主菜单 *${plain}" && read temp
+    docker_sh
+}
+
+
+
 docker_sh() {    
     echo -e "
     ${green}Docker控制台${plain}  ${red}${VERSION}${plain}
@@ -97,7 +106,7 @@ docker_sh() {
     ${green}8.${plain}  热更新容器镜像
     ——镜像命令——————————————-
     ${green}20.${plain} 查看所有镜像
-    ${green}21.${plain}  
+    ${green}21.${plain} 删除镜像
     ${green}22.${plain} 
     ${green}23.${plain} 
     ${green}24.${plain} 
@@ -120,6 +129,7 @@ docker_sh() {
     7) exec ;;
     8) update ;;
     20) images ;;
+    21) rm_images ;;
     99)
         stats
         ;;
