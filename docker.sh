@@ -180,7 +180,7 @@ docker_sh() {
     41) Compose_stop ;;
     42) Compose_restart ;;
     43) Compose_rm ;;
-    43) Compose_logs_f ;;
+    44) Compose_logs_f ;;
     99)
         stats
         ;;
