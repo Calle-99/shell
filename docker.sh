@@ -96,8 +96,7 @@ docker_sh() {
     echo -e "
     ${green}Docker控制台${plain}  ${red}${VERSION}${plain}
     ——容器命令——————————————-
-    ${green}1.${plain}  查看所有容器
-    ${green}2.${plain}  重启容器
+    ${green}1.查看所有容器  2.重启容器${plain}
     ${green}3.${plain}  启动容器
     ${green}4.${plain}  停止容器
     ${green}5.${plain}  删除容器
