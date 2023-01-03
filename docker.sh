@@ -191,7 +191,8 @@ docker_sh() {
     ====================
        ${plain}"
        echo && echo -e "    ${yellow}输入0退出脚本 | 其他则继续${plain}" 
-       echo && read -p "请输入编号: " tuichu;
+       CHOICE_B=$(echo -e "\n${bold}    └─ 请输入正确的命令编号：${plain}")
+       echo && read -p "${CHOICE_B}" tuichu;
        if [ "$tuichu" != "0" ];
        then echo ""
        docker_sh
