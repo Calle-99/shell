@@ -176,6 +176,11 @@ docker_sh() {
     9) always ;;
     20) images ;;
     21) rm_images ;;
+    40) Compose_up_d ;;
+    41) Compose_stop ;;
+    42) Compose_restart ;;
+    43) Compose_rm ;;
+    43) Compose_logs_f ;;
     99)
         stats
         ;;
