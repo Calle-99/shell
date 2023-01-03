@@ -152,8 +152,8 @@ docker_sh() {
     ###############${black}镜像命令${plain}##############################
     ${green}20.${plain}查看所有镜像            ${green}21.${plain}删除镜像
     ###############${black}Docker Compose命令${plain}####################
-    ${green}40.${plain}启动容器                 ${green}41.${plain}停止容器
-    ${green}42.${plain}重启容器                 ${green}43.${plain}删除容器
+    ${green}40.${plain}启动容器                ${green}41.${plain}停止容器
+    ${green}42.${plain}重启容器                ${green}43.${plain}删除容器
     ${green}44.${plain}查看容器日志
     #####################################################
     ${yellow}0.${plain}退出脚本                 ${green}99.${plain}显示容器资源的使用情况
@@ -185,24 +185,9 @@ docker_sh() {
         stats
         ;;
     0) exit 0 ;;
-    *) echo && echo -n -e "${yellow}
-    ====================
-    * 请输入正确的编号 *
-    ====================
-       ${plain}"
-       echo && echo -e "    ${yellow}输入0退出脚本 | 其他则继续${plain}" 
-       CHOICE_B=$(echo -e "\n${bold}    └─ 请输入正确的命令编号：${plain}")
-       echo && read -p "${CHOICE_B}" tuichu;
-       if [ "$tuichu" != "0" ];
-       then echo ""
-       docker_sh
-       else 
-       exit 0
-       fi;
-       ;;
+    *) clear && docker_sh ;;
     esac
 }
 
 
 docker_sh
-
