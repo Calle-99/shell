@@ -101,31 +101,31 @@ rm_images() {
 }
 
 #Docker Compose命令############################################################
-Compose_up_d() {
+compose_up_d() {
     docker-compose up -d
     echo && echo -n -e "${yellow}* 按回车返回主菜单 *${plain}" && read temp
     docker_sh
 }
 
-Compose_stop() {
+compose_stop() {
     docker-compose stop
     echo && echo -n -e "${yellow}* 按回车返回主菜单 *${plain}" && read temp
     docker_sh
 }
 
-Compose_restart() {
+compose_restart() {
     docker-compose restart
     echo && echo -n -e "${yellow}* 按回车返回主菜单 *${plain}" && read temp
     docker_sh
 }
 
-Compose_rm() {
+compose_rm() {
     docker-compose rm
     echo && echo -n -e "${yellow}* 按回车返回主菜单 *${plain}" && read temp
     docker_sh
 }
 
-Compose_logs_f() {
+compose_logs_f() {
     docker-compose logs -f
     echo && echo -n -e "${yellow}* 按回车返回主菜单 *${plain}" && read temp
     docker_sh
@@ -176,11 +176,11 @@ docker_sh() {
     9) always ;;
     20) images ;;
     21) rm_images ;;
-    40) Compose_up_d ;;
-    41) Compose_stop ;;
-    42) Compose_restart ;;
-    43) Compose_rm ;;
-    44) Compose_logs_f ;;
+    40) compose_up_d ;;
+    41) compose_stop ;;
+    42) compose_restart ;;
+    43) compose_rm ;;
+    44) compose_logs_f ;;
     99)
         stats
         ;;
