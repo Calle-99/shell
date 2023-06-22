@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## 清屏
+    clear
+
 echo "请选择要运行的代码序号："
 echo "1. SuperSpeed 三网全面测速"
 echo "2. 仅进行 speedtest 国内三网测速"
