@@ -1,9 +1,20 @@
 #!/bin/bash
 
+black='\033[0;30m'
+red='\033[0;31m'
+green='\033[0;32m'
+blue='\033[34m'
+yellow='\033[0;33m'
+bold='\033[1m'
+plain='\033[0m'
+
 ## 清屏
 clear
 
-echo "请选择要运行的代码序号："
+echo -e '+---------------------------------------------------------------+'
+echo -e "   系统时间  ${yellow}$(date "+%Y-%m-%d %H:%M:%S")${plain}"
+echo -e "   运行命令  ${yellow}bash <(curl -sSL https://raw.githubusercontent.com/Calle-99/shell/main/speedtest.sh)${plain}"
+echo -e "+---------------------------------------------------------------+
 echo "1. backtrace三网回程路由检测"
 echo "2. mtr三网回程路由检测"
 echo "3. SuperSpeed 三网全面测速"
@@ -11,7 +22,7 @@ echo "4. 仅进行 speedtest 国内三网测速"
 echo "5. 流媒体测试"
 echo "6. 国内外网络测速+流媒体测试"
 
-Choice_A=$(echo -e "\n    └─ 请输入命令编号：")
+Choice_A=$(echo -e "\n${bold}    └─ 请输入命令编号：${plain}")
 
 read -p "${Choice_A}" choice
 
