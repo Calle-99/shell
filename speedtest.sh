@@ -11,10 +11,10 @@ plain='\033[0m'
 ## 清屏
 clear
 
-echo -e '+---------------------------------------------------------------+'
+echo -e "+---------------------------------------------------------------+"
 echo -e "   系统时间  ${yellow}$(date "+%Y-%m-%d %H:%M:%S")${plain}"
 echo -e "   运行命令  ${yellow}bash <(curl -sSL https://raw.githubusercontent.com/Calle-99/shell/main/speedtest.sh)${plain}"
-echo -e "+---------------------------------------------------------------+
+echo -e "+---------------------------------------------------------------+"
 echo "1. backtrace三网回程路由检测"
 echo "2. mtr三网回程路由检测"
 echo "3. SuperSpeed 三网全面测速"
