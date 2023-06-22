@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## 清屏
-    clear
+clear
 
 echo "请选择要运行的代码序号："
 echo "1. backtrace三网回程路由检测"
@@ -11,7 +11,9 @@ echo "4. 仅进行 speedtest 国内三网测速"
 echo "5. 流媒体测试"
 echo "6. 国内外网络测速+流媒体测试"
 
-read choice
+Choice_A=$(echo -e "\n    └─ 请输入命令编号：")
+
+read -p "${Choice_A}" choice
 
 case $choice in
     1)
