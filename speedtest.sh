@@ -21,6 +21,7 @@ echo "3. SuperSpeed 三网全面测速"
 echo "4. 仅进行 speedtest 国内三网测速"
 echo "5. 流媒体测试"
 echo "6. 国内外网络测速+流媒体测试"
+echo "7. HyperSpeed三网测速"
 
 Choice_A=$(echo -e "\n${bold}    └─ 请输入命令编号：${plain}")
 
@@ -44,6 +45,9 @@ case $choice in
         ;;
     6)
         bash <(wget -qO- https://down.vpsaff.net/linux/speedtest/superbench-dev.sh) --no-geek
+        ;;
+    7)
+        bash <(wget -qO- https://bench.im/hyperspeed)
         ;;
     *)
         echo "无效的选择"
