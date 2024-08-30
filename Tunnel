@@ -76,7 +76,7 @@ $a install wget -y > /dev/null 2>&1
 #开始拉取argo tunnel
 file1="/usr/bin/cloudflared"
 if [ ! -f "$file1" ];then
- wget  "https://ghproxy.com/https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-${cpu}" -O cloudflared
+ wget  "https://mirror.ghproxy.com/https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-${cpu}" -O cloudflared
  chmod +x cloudflared && cp cloudflared /usr/bin
 fi
 
@@ -88,9 +88,11 @@ fi
 
 if [ "${yon}" = "1" ] || [ "${conf}" = "没有隧道" ]
 then
-read -p "请输入要穿透到cloudflare的域名(不需要输入http://): " httpurl
-read -p "请输入本地ip:端口(不需要输入http://): " localurl
+read -p "请输入要穿透到cloudflare的域名(不需要http://): " httpurl
 read -p "请输入任意隧道名: " Tunnel
+read -p "请输入本地 IP:端口(默认为 127.0.0.1:80): " localurl
+
+localurl=${localurl:-127.0.0.1:80}
 
 cloudflared tunnel create $Tunnel
 cloudflared tunnel route dns $Tunnel $httpurl
